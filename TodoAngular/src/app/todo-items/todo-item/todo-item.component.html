@@ -1,0 +1,17 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+            </div>
+            <input name="Name" [(ngModel)]="service.formData.name" class="form-control" placeholder="Wpisz pozycję" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid">
+            <i class="fas fa-database"></i>
+            Dodaj do listy</button>
+    </div>
+</form>

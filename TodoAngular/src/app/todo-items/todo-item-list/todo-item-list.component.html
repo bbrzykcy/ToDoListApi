@@ -1,0 +1,14 @@
+<table class="table table-hover table-bordered">
+    <tbody>
+        <tr *ngFor="let todoItem of service.list">
+            <td (click)="populateForm(todoItem)"> {{todoItem.name}}</td>
+            <td width="20%" align="center" (click)="onComplete(todoItem)">
+                <i class=" far fa-square fa-lg " *ngIf="!todoItem.isComplete "></i>
+                <i class="fas fa-check-square fa-lg " *ngIf="todoItem.isComplete "></i>
+            </td>
+            <td width="20% " align="center">
+                <i class=" far fa-trash-alt fa-lg text-danger " (click)="onDelete(todoItem.id) "></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
